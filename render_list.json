@@ -1,5 +1,7 @@
 {
     "default_manifest": "manifest.json",
     "vox/catenary_pylon.vox": "vox/pylon.json",
-    "vox/catenary_wire_s.vox": "vox/wire_s.json"
+    "vox/catenary_wire_s.vox": "vox/wire_s.json",
+    "vox/catenary_wire_d.vox": "vox/wire_d.json",
+    "vox/normal-track_d.vox": "vox/track_d.json"
 }

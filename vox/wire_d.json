@@ -39,6 +39,26 @@
       "angle": 135,
       "width": 256,
       "height": 0
+    },
+    {
+      "angle": 180,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 225,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 270,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 315,
+      "width": 256,
+      "height": 0
     }
   ]
 }

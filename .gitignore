@@ -1,3 +1,4 @@
 *.png
 *.nml
 *.grf
+.nmlcache/

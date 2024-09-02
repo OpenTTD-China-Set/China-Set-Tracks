@@ -1,0 +1,73 @@
+grf {
+    grfid:                  "\5f\5f\03\03";
+    name:                   string(STR_GRF_NAME);
+    desc:                   string(STR_GRF_DESC);
+    url:                    string(STR_GRF_URL);
+    version:                1;
+    min_compatible_version: 0;
+}
+
+/*
+    Naming scheme:
+
+    items:      i_item
+    spritesets: s_spriteset
+    parameters: p_parameter
+    templates:  t_template
+    procedures: fn_procedure
+
+*/
+
+#define X_SIZE 256
+#define Y_SIZE 310
+
+template t_track(name){
+    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_32bpp.png"]
+    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_32bpp.png"]
+
+    [3*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_d_32bpp.png"]
+    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_d_32bpp.png"]
+    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_d_32bpp.png"]
+    [2*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_d_32bpp.png"]
+
+    []
+    []
+
+    []
+    []
+    []
+    []
+
+    []
+    []
+    []
+    []
+}
+
+spriteset (s_track, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    t_track("vox/normal-track")
+}
+
+item (FEAT_RAILTYPES, normal_track, 1) {
+    property {
+        label:                      "RAIL";
+        introduction_date:          0;
+        menu_text:                  string(STR_GRF_NAME);
+        name:                       string(STR_GRF_NAME);
+        build_window_caption:       string(STR_GRF_NAME);
+        autoreplace_text:           string(STR_GRF_NAME);
+        new_engine_text:            string(STR_GRF_NAME);
+        compatible_railtype_list:   ["RAIL", "ELRL", "MONO", "MGLV"];
+        powered_railtype_list:      ["RAIL", "ELRL", "MONO", "MGLV"];
+        railtype_flags:             bitmask();
+        curve_speed_multiplier:     1;
+        station_graphics:           RAILTYPE_STATION_NORMAL;
+        construction_cost:          1;
+        maintenance_cost:           1;
+        speed_limit:                0;
+        acceleration_model:         ACC_MODEL_RAIL;
+    }
+    graphics {
+        underlay:                   s_track;
+    }
+}

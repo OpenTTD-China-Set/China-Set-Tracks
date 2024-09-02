@@ -1,0 +1,5 @@
+##grflangid 0x01
+
+STR_GRF_NAME  :China Set: Tracks {PUSH_COLOUR}{WHITE}{VERSION}{POP_COLOUR}
+STR_GRF_DESC  :Chinese Tracks
+STR_GRF_URL   :https://github.com/openttd-china-set/china-set-tracks
