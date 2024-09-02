@@ -21,12 +21,42 @@
   "render_elevation": 30,
   "sprites": [
     {
+      "angle": 0,
+      "width": 256,
+      "height": 0
+    },
+    {
       "angle": 45,
       "width": 256,
       "height": 0
     },
     {
+      "angle": 90,
+      "width": 256,
+      "height": 0
+    },
+    {
       "angle": 135,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 180,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 225,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 270,
+      "width": 256,
+      "height": 0
+    },
+    {
+      "angle": 315,
       "width": 256,
       "height": 0
     }

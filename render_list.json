@@ -1,5 +1,5 @@
 {
     "default_manifest": "manifest.json",
-    "vox/this.vox": "gfx/manifest2.json",
-    "vox/that.vox": "gfx/manifest2.json"
+    "vox/catenary_pylon.vox": "vox/pylon.json",
+    "vox/catenary_wire_s.vox": "vox/wire_s.json"
 }

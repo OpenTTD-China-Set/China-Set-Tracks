@@ -26,7 +26,7 @@ clean_grf:
 
 # clean PNG files
 clean_png:
-    find . -name '*.png' -delete
+    find ./vox/ -name '*.png' -delete
 
 # install dependecies, assuming on Windows
 deps:

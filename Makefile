@@ -22,7 +22,7 @@ PNG := $(PNG_8BPP) $(PNG_MASK) $(PNG_32BPP)
 	@export MANIFEST=$(shell jq -r --arg key "$<" --arg default "$(DEFAULT_MANIFEST)" \
 	                  'if has($$key) then .[$$key] else $$default end' $(RENDER_LIST_FILE)); \
 	echo "Rendering $<, using manifest $$MANIFEST"; \
-	$(CMD_RENDER) -manifest $$MANIFEST -input $< -f
+	$(CMD_RENDER) -manifest $$MANIFEST -input $<
 
 .PHONY: render
 
