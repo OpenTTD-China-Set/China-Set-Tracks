@@ -1,0 +1,5 @@
+{
+    "default_manifest": "manifest.json",
+    "vox/this.vox": "gfx/manifest2.json",
+    "vox/that.vox": "gfx/manifest2.json"
+}
