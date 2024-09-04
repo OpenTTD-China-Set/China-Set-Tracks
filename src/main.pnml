@@ -20,15 +20,16 @@ grf {
 
 #define X_SIZE 256
 #define Y_SIZE 310
+#define XOFFSET -124
+#define YOFFSET -182
 
-template t_track(name){
-    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_32bpp.png"]
-    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_32bpp.png"]
-
-    [3*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_d_32bpp.png"]
-    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -128, -180, name+"_d_32bpp.png"]
-    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_d_32bpp.png"]
-    [2*(X_SIZE+8), 0, X_SIZE, Y_SIZE, -120, -180, name+"_d_32bpp.png"]
+template t_underlay(name){
+    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"01_32bpp.png"]
+    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"01_32bpp.png"]
+    [0*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"]
+    [2*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"]
+    [3*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"]
+    [1*(X_SIZE+8), 0, X_SIZE, Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"]
 
     []
     []
@@ -44,8 +45,79 @@ template t_track(name){
     []
 }
 
+template t_precombined(name){
+    // 00, no sprites
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"01_32bpp.png"] // 01 01 0
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"01_32bpp.png"] // 02 01 1
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"03_32bpp.png"] // 03 03 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"] // 04 04 0
+    [4*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 05 05 4
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 06 05 3
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"07_32bpp.png"] // 07 07 1
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"] // 08 04 2
+    [6*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 09 05 6
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 10 05 1
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"07_32bpp.png"] // 11 07 3
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"12_32bpp.png"] // 12 12 1
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"13_32bpp.png"] // 13 13 2
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"13_32bpp.png"] // 14 13 1
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"15_32bpp.png"] // 15 15 1
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"] // 16 04 1
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 17 05 2
+    [7*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 18 05 7
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"07_32bpp.png"] // 19 07 2
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"20_32bpp.png"] // 20 20 1
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"21_32bpp.png"] // 21 21 1
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"22_32bpp.png"] // 22 22 1
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"23_32bpp.png"] // 23 23 1
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"20_32bpp.png"] // 24 20 2
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"22_32bpp.png"] // 25 22 2
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"21_32bpp.png"] // 26 21 2
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"23_32bpp.png"] // 27 23 2
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"28_32bpp.png"] // 28 28 3
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 29 29 2
+    [7*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 30 29 7
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"31_32bpp.png"] // 31 31 2
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"04_32bpp.png"] // 32 04 3
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 33 05 0
+    [5*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"05_32bpp.png"] // 34 05 5
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"07_32bpp.png"] // 35 07 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"20_32bpp.png"] // 36 20 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"22_32bpp.png"] // 37 22 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"21_32bpp.png"] // 38 21 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"23_32bpp.png"] // 39 23 0
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"20_32bpp.png"] // 40 20 3
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"21_32bpp.png"] // 41 21 3
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"22_32bpp.png"] // 42 22 3
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"23_32bpp.png"] // 43 23 3
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"28_32bpp.png"] // 44 28 1
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 45 29 0
+    [5*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 46 29 5
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"31_32bpp.png"] // 47 31 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"12_32bpp.png"] // 48 12 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"13_32bpp.png"] // 49 13 0
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"13_32bpp.png"] // 50 13 3
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"15_32bpp.png"] // 51 15 0
+    [2*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"28_32bpp.png"] // 52 28 2
+    [4*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 53 29 4
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 54 29 3
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"31_32bpp.png"] // 55 31 1
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"28_32bpp.png"] // 56 28 0
+    [6*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 57 29 6
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"29_32bpp.png"] // 58 29 1
+    [3*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"31_32bpp.png"] // 59 31 3
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"60_32bpp.png"] // 60 60 0
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"61_32bpp.png"] // 61 61 0
+    [1*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"61_32bpp.png"] // 62 61 1
+    [0*(X_SIZE+8),0,X_SIZE,Y_SIZE, XOFFSET, YOFFSET, name+"63_32bpp.png"] // 63 63 0
+}
+
 spriteset (s_track, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
-    t_track("vox/normal-track")
+    t_underlay("vox/normal/")
+}
+
+spriteset (s_track_precombined, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    t_precombined("vox/normal/")
 }
 
 item (FEAT_RAILTYPES, normal_track, 1) {
@@ -59,7 +131,7 @@ item (FEAT_RAILTYPES, normal_track, 1) {
         new_engine_text:            string(STR_GRF_NAME);
         compatible_railtype_list:   ["RAIL", "ELRL", "MONO", "MGLV"];
         powered_railtype_list:      ["RAIL", "ELRL", "MONO", "MGLV"];
-        railtype_flags:             bitmask();
+        railtype_flags:             bitmask(RAILTYPE_FLAG_PRECOMBINED);
         curve_speed_multiplier:     1;
         station_graphics:           RAILTYPE_STATION_NORMAL;
         construction_cost:          1;
@@ -69,5 +141,6 @@ item (FEAT_RAILTYPES, normal_track, 1) {
     }
     graphics {
         underlay:                   s_track;
+        precombined:                s_track_precombined;
     }
 }

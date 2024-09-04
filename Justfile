@@ -35,3 +35,6 @@ deps:
     scoop install openttd-bucket/nml
     scoop install mingw
     scoop install jq
+
+clean_png_dir dir:
+    find ./vox/{{dir}} -name '*.png' -delete

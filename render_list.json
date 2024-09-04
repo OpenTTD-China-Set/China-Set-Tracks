@@ -15,5 +15,59 @@
     },
     "vox/this.vox": {
         "manifest": "manifest.json"
+    },
+    "vox/normal/03.vox": {
+        "manifest": "vox/normal/_1.json"
+    },
+    "vox/normal/60.vox": {
+        "manifest": "vox/normal/_1.json"
+    },
+    "vox/normal/63.vox": {
+        "manifest": "vox/normal/_1.json"
+    },
+    "vox/normal/01.vox": {
+        "manifest": "vox/normal/_2.json"
+    },
+    "vox/normal/12.vox": {
+        "manifest": "vox/normal/_2.json"
+    },
+    "vox/normal/15.vox": {
+        "manifest": "vox/normal/_2.json"
+    },
+    "vox/normal/61.vox": {
+        "manifest": "vox/normal/_2.json"
+    },
+    "vox/normal/04.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/07.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/13.vox": {
+        "manifest":"vox/normal/_4f.json"
+    },
+    "vox/normal/20.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/21.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/22.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/23.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/28.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/31.vox": {
+        "manifest":"vox/normal/_4.json"
+    },
+    "vox/normal/05.vox": {
+        "manifest": "vox/normal/_8.json"
+    },
+    "vox/normal/29.vox": {
+        "manifest": "vox/normal/_8.json"
     }
 }
