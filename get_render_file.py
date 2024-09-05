@@ -26,11 +26,18 @@ for key, item in render_list.items():
     if filename in [
         os.path.abspath(os.path.normpath(p)) for p in glob.glob(key, recursive=True)
     ]:
-        if is_manifest and "manifest" in item:
-            print(item["manifest"])
-        elif "palette" in item:
-            print(item["palette"])
+        if is_manifest:
+            if "manifest" in item:
+                print(item["manifest"])
+            else:
+                print(default["manifest"])
+        else:
+            if "palette" in item:
+                print(item["palette"])
+            else:
+                print(default["palette"])
         sys.exit(0)
+
 
 # filename not found
 # print the default manifest and palette
