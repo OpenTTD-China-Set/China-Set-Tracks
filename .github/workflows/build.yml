@@ -26,7 +26,9 @@ jobs:
             Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
             scoop install just
             just deps
-            just
+            make
+            gcc -E -x c tracks.pnml > tracks.nml
+            nmlc tracks.nml --grf=china-set-tracks.grf
 
       - name: Pack Binaries
         shell: pwsh
