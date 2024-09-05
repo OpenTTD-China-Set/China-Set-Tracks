@@ -2,3 +2,5 @@
 *.nml
 *.grf
 .nmlcache/
+*.md5
+*.log

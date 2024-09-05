@@ -11,7 +11,13 @@ sprites:
 # generate code
 code:
     gcc -E -x c tracks.pnml > tracks.nml
-    nmlc tracks.nml --grf=china-set-tracks.grf
+    nmlc tracks.nml --grf=china-set-tracks.grf --md5=china-set-tracks.md5 --nml=china-set-tracks_parsed.nml
+    @echo
+    @echo "GRF file generated, MD5 hash:"
+    @echo "Date: $(date "+%Y-%m-%d %H:%M:%S"), \
+           GRF Hash: $(cat china-set-tracks.md5), \
+           Git Hash: $(git rev-parse HEAD)" | tee -a hashes.log
+    @echo
 
 # copy to designated folder
 copy:
@@ -34,7 +40,6 @@ deps:
     scoop install openttd-bucket/gorender
     scoop install openttd-bucket/nml
     scoop install mingw
-    scoop install jq
 
 clean_png_dir dir:
     find ./vox/{{dir}} -name '*.png' -delete
