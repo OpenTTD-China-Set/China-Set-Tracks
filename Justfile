@@ -39,7 +39,6 @@ deps:
     scoop bucket add openttd-bucket https://github.com/wensimehrp/openttd-bucket
     scoop install openttd-bucket/gorender
     scoop install openttd-bucket/nml
-    scoop install mingw
 
 clean_png_dir dir:
     find ./vox/{{dir}} -name '*.png' -delete

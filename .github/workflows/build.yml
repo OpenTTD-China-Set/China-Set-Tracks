@@ -1,0 +1,67 @@
+name: Build Station
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install Scoop
+        shell: pwsh
+        run: |
+            Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+            Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+            scoop install just
+            just deps
+
+      - name: Build Tracks
+        run: just
+
+      - name: Pack Binaries
+        shell: pwsh
+        run: |
+            New-Item -ItemType Directory -Path release
+            Move-Item -Path china-set-tracks.grf -Destination release/
+
+      - name: Get Date
+        id: date
+        shell: pwsh
+        run: echo "RELEASE_DATE=$(Get-Date -Format 'yyyy-MM-dd')" >> $env:GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_DATE }}
+          release_name: Release ${{ env.RELEASE_DATE }}
+          draft: false
+          prerelease: true
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release/china-set-tracks.grf
+          asset_name: china-set-tracks.grf
+          asset_content_type: application/octet-stream
