@@ -30,7 +30,7 @@ for key, item in render_list.items():
             print(item["manifest"])
         elif "palette" in item:
             print(item["palette"])
-        break
+        sys.exit(0)
 
 # filename not found
 # print the default manifest and palette
