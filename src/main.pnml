@@ -144,3 +144,36 @@ item (FEAT_RAILTYPES, normal_track, 1) {
         precombined:                s_track_precombined;
     }
 }
+
+spriteset (s_track_highspeed, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    t_underlay("vox/highspeed/")
+}
+
+spriteset (s_track_precombined_highspeed, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP) {
+    t_precombined("vox/highspeed/")
+}
+
+item (FEAT_RAILTYPES, highspeed_track, 2) {
+    property {
+        label:                      "ELRL";
+        introduction_date:          0;
+        menu_text:                  string(STR_GRF_NAME);
+        name:                       string(STR_GRF_NAME);
+        build_window_caption:       string(STR_GRF_NAME);
+        autoreplace_text:           string(STR_GRF_NAME);
+        new_engine_text:            string(STR_GRF_NAME);
+        compatible_railtype_list:   ["RAIL", "ELRL", "MONO", "MGLV"];
+        powered_railtype_list:      ["RAIL", "ELRL", "MONO", "MGLV"];
+        railtype_flags:             bitmask(RAILTYPE_FLAG_PRECOMBINED);
+        curve_speed_multiplier:     1;
+        station_graphics:           RAILTYPE_STATION_NORMAL;
+        construction_cost:          1;
+        maintenance_cost:           1;
+        speed_limit:                0;
+        acceleration_model:         ACC_MODEL_RAIL;
+    }
+    graphics {
+        underlay:                   s_track_highspeed;
+        precombined:                s_track_precombined_highspeed;
+    }
+}
