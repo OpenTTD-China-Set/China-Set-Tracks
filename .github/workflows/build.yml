@@ -19,20 +19,14 @@ jobs:
         with:
           python-version: 3.12
 
-      - name: Install Scoop
+      - name: Install Scoop - setup - build
         shell: pwsh
         run: |
             Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
             Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-
-      - name: Install dependencies
-        shell: pwsh
-        run: |
             scoop install just
             just deps
-
-      - name: Build Tracks
-        run: just
+            just
 
       - name: Pack Binaries
         shell: pwsh
