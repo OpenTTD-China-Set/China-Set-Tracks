@@ -9,7 +9,7 @@ Requirements:
 * Make
 * NML
 * gcc
-* jq
+* python
 * gorender (renderobject)
 * sh (Comes with Git on Windows)
 

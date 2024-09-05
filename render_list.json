@@ -1,6 +1,8 @@
 {
-    "default_manifest": "manifest.json",
-    "default_palette": "ttd_palette.json",
+    "default": {
+        "manifest": "manifest.json",
+        "palette": "ttd_palette.json"
+    },
     "vox/catenary_pylon.vox": {
         "manifest": "vox/pylon.json"
     },
@@ -13,61 +15,58 @@
     "vox/normal-track_d.vox": {
         "manifest": "vox/track_d.json"
     },
-    "vox/this.vox": {
-        "manifest": "manifest.json"
-    },
-    "vox/normal/03.vox": {
+    "vox/*/03.vox": {
         "manifest": "vox/normal/_1.json"
     },
-    "vox/normal/60.vox": {
+    "vox/*/60.vox": {
         "manifest": "vox/normal/_1.json"
     },
-    "vox/normal/63.vox": {
+    "vox/*/63.vox": {
         "manifest": "vox/normal/_1.json"
     },
-    "vox/normal/01.vox": {
+    "vox/*/01.vox": {
         "manifest": "vox/normal/_2.json"
     },
-    "vox/normal/12.vox": {
+    "vox/*/12.vox": {
         "manifest": "vox/normal/_2.json"
     },
-    "vox/normal/15.vox": {
+    "vox/*/15.vox": {
         "manifest": "vox/normal/_2.json"
     },
-    "vox/normal/61.vox": {
+    "vox/*/61.vox": {
         "manifest": "vox/normal/_2.json"
     },
-    "vox/normal/04.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/04.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/07.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/07.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/13.vox": {
-        "manifest":"vox/normal/_4f.json"
+    "vox/*/13.vox": {
+        "manifest": "vox/normal/_4f.json"
     },
-    "vox/normal/20.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/20.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/21.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/21.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/22.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/22.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/23.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/23.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/28.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/28.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/31.vox": {
-        "manifest":"vox/normal/_4.json"
+    "vox/*/31.vox": {
+        "manifest": "vox/normal/_4.json"
     },
-    "vox/normal/05.vox": {
+    "vox/*/05.vox": {
         "manifest": "vox/normal/_8.json"
     },
-    "vox/normal/29.vox": {
+    "vox/*/29.vox": {
         "manifest": "vox/normal/_8.json"
     }
 }
