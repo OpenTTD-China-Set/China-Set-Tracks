@@ -39,7 +39,7 @@ jobs:
       - name: Get Date
         id: date
         shell: pwsh
-        run: echo "RELEASE=$(Get-Date -Format 'yyyy-MM-dd') $(git rev-parse --short HEAD)" >> $env:GITHUB_ENV
+        run: echo "RELEASE=$(Get-Date -Format 'yyyy-MM-dd')-$(git rev-parse --short HEAD)" >> $env:GITHUB_ENV
 
       - name: Create Release
         id: create_release
