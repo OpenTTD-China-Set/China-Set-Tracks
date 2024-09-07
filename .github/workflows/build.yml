@@ -39,7 +39,7 @@ jobs:
       - name: Get Date
         id: date
         shell: pwsh
-        run: echo "RELEASE_DATE=$(Get-Date -Format 'yyyy-MM-dd')" >> $env:GITHUB_ENV
+        run: echo "RELEASE=$(Get-Date -Format 'yyyy-MM-dd') $(git rev-parse --short HEAD)" >> $env:GITHUB_ENV
 
       - name: Create Release
         id: create_release
@@ -47,8 +47,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.RELEASE_DATE }}
-          release_name: Release ${{ env.RELEASE_DATE }}
+          tag_name: ${{ env.RELEASE }}
+          release_name: Release ${{ env.RELEASE }}
           draft: false
           prerelease: true
 
