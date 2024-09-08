@@ -30,12 +30,6 @@ jobs:
             gcc -E -x c tracks.pnml > tracks.nml
             nmlc tracks.nml --grf=china-set-tracks.grf
 
-      - name: Pack Binaries
-        shell: pwsh
-        run: |
-            New-Item -ItemType Directory -Path release
-            Move-Item -Path china-set-tracks.grf -Destination release/
-
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.4.0
         with:
