@@ -1,4 +1,4 @@
-name: Build Station
+name: Build Tracks
 
 on:
   push:
@@ -36,28 +36,8 @@ jobs:
             New-Item -ItemType Directory -Path release
             Move-Item -Path china-set-tracks.grf -Destination release/
 
-      - name: Get Date
-        id: date
-        shell: pwsh
-        run: echo "RELEASE=$(Get-Date -Format 'yyyy-MM-dd')-$(git rev-parse --short HEAD)" >> $env:GITHUB_ENV
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.0
         with:
-          tag_name: dummy
-          release_name: Release ${{ env.RELEASE }}
-          draft: false
-          prerelease: true
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release/china-set-tracks.grf
-          asset_name: china-set-tracks.grf
-          asset_content_type: application/octet-stream
+          name: chinas-set-tracks.grf
+          path: ./china-set-tracks.grf
